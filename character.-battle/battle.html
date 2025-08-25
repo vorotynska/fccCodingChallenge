@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Batlle</title>
+    <script src="./battle.js" defer></script>
+</head>
+<body>
+    <h1>Character Batlle</h1>
+    <p>
+        Given two strings representing your army and an opposing army, 
+        each character from your army battles the character at the same 
+        position from the opposing army using the following rules:
+    </p>
+    <ul>
+        <li>Characters a-z have a strength of 1-26, respectively.</li>
+        <li>Characters A-Z have a strength of 27-52, respectively.</li>
+        <li>Digits 0-9 have a strength of their face value.</li>
+        <li>All other characters have a value of zero.</li>
+        <li>Each character can only fight one battle.</li>
+        <p>
+            For each battle, the stronger character wins. The army with 
+            more victories, wins the war. Return the following values:
+        </p>
+        <ul>
+            <li>"Opponent retreated" if your army has more characters than the opposing army.</li>
+            <li>"We retreated" if the opposing army has more characters than yours.</li>
+            <li>"We won" if your army won more battles.</li>
+            <li>"We lost" if the opposing army won more battles.</li>
+            <li>"It was a tie" if both armies won the same number of battles.</li> 
+        </ul>
+    </ul>
+</body>
+</html>
