@@ -61,3 +61,39 @@ const symmetricDiff = [...aaa.filter(el => !bbb.includes(el)),
     ...bbb.filter(el => !aaa.includes(el))
 ];
 console.log(symmetricDiff); // [1, 2, 5, 6]
+
+// --------------------------------------
+//В JavaScript у любого числа есть метод .toString(radix), где radix — это система счисления. Для hex используется 16.
+
+//Пример:
+
+let num = 255;
+console.log(num.toString(16)); // "ff"
+
+
+//⚠️ Но есть нюанс: иногда число меньше 16, например 5.
+
+let num1 = 5;
+console.log(num.toString(16)); // "5"
+
+
+//А нам нужно две цифры ("05"), иначе hex-код получится кривым.
+//👉 Решается методом .padStart(2, "0"):
+
+function toHex(num) {
+    return num.toString(16).padStart(2, "0");
+}
+
+console.log(toHex(255)); // "ff"
+console.log(toHex(5)); // "05"
+
+
+//Теперь можно собирать hex-цвет:
+
+function rgbToHex(r, g, b) {
+    return "#" + toHex(r) + toHex(g) + toHex(b);
+}
+
+console.log(rgbToHex(255, 0, 0)); // "#ff0000"
+console.log(rgbToHex(0, 255, 0)); // "#00ff00"
+console.log(rgbToHex(0, 0, 255)); // "#0000ff"
